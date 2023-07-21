@@ -1,0 +1,16 @@
+from app import app
+from flaskext.mysql import MySQL
+from flask_jwt_extended import JWTManager
+
+# Dev Db
+mysql = MySQL()
+app.config['MYSQL_DATABASE_USER'] = ''
+app.config['MYSQL_DATABASE_PASSWORD'] = ''
+app.config['MYSQL_DATABASE_DB'] = ''
+app.config['MYSQL_DATABASE_HOST'] = ''
+mysql.init_app(app)
+
+app.config['JWT_SECRET_KEY'] = ''
+jwt = JWTManager(app)
+
+BASE_URL = 'http://127.0.0.1:5000'
